@@ -154,6 +154,12 @@ export default function NotificationsScreen() {
               <TouchableOpacity
                 key={item.id}
                 activeOpacity={0.9}
+                onPress={() =>
+                  router.push({
+                    pathname: "/notifications/[id]",
+                    params: { id: item.id },
+                  })
+                }
                 style={[
                   styles.notificationCard,
                   {
