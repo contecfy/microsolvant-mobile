@@ -1,26 +1,22 @@
-import React, { useCallback, useState } from 'react';
-import { StyleSheet, View, ScrollView, Dimensions, TouchableOpacity, RefreshControl } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
-import { 
-  TrendingUp, 
-  TrendingDown, 
-  Banknote, 
-  Users, 
-  PieChart, 
-  ArrowUpRight, 
-  Calendar,
-  Layers,
-  Info,
-  Building2,
-} from 'lucide-react-native';
 import { router } from 'expo-router';
+import {
+  ArrowUpRight,
+  Banknote,
+  Bell,
+  Layers,
+  PieChart,
+  TrendingUp
+} from 'lucide-react-native';
+import React, { useCallback, useState } from 'react';
+import { Dimensions, RefreshControl, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 
+import { reportApi } from '@/api/report';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { useThemeColor } from '@/hooks/use-theme-color';
-import { reportApi } from '@/api/report';
-import { useAuthStore } from '@/store/auth-store';
 import { useCompany } from '@/hooks/use-company';
+import { useThemeColor } from '@/hooks/use-theme-color';
+import { useAuthStore } from '@/store/auth-store';
 
 const { width } = Dimensions.get('window');
 
@@ -88,8 +84,8 @@ export default function DashboardScreen() {
             )}
           </View>
         </View>
-        <TouchableOpacity style={[styles.profileButton, { backgroundColor: cardBackground, borderColor }]}>
-          <Users color={tintColor} size={20} />
+        <TouchableOpacity style={[styles.profileButton, { backgroundColor: cardBackground, borderColor }]} onPress={() => router.push('/notifications/notifications')}>
+          <Bell color={tintColor} size={20} />
         </TouchableOpacity>
       </View>
 

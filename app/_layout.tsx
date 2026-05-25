@@ -80,6 +80,7 @@ export default function RootLayout() {
           <Stack.Screen name="loan/[id]" options={{ headerShown: false }} />
           <Stack.Screen name="new-client" options={{ headerShown: false }} />
           <Stack.Screen name="settings" options={{ headerShown: false }} />
+          <Stack.Screen name="notifications/notifications" options={{ headerShown: false }} />
         </Stack>
         <StatusBar style="auto" />
       </ThemeProvider>
