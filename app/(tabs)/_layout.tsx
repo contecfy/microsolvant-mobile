@@ -2,8 +2,7 @@ import { Tabs } from "expo-router";
 import {
   HandCoins,
   LayoutDashboard,
-  TrendingUp,
-  User,
+  User
 } from "lucide-react-native";
 import React from "react";
 
@@ -66,15 +65,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, size }) => <User size={size} color={color} />,
         }}
       />
-      <Tabs.Screen
-        name="invest"
-        options={{
-          title: "Invest",
-          tabBarIcon: ({ color, size }) => (
-            <TrendingUp size={size} color={color} />
-          ),
-        }}
-      />
+    
       <Tabs.Screen
         name="profile"
         options={{

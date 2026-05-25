@@ -127,7 +127,7 @@ export default function LoginScreen() {
                 resizeMode="contain"
               />
               <ThemedText type="boldPrecision" style={styles.title}>
-                Rucks Plug
+                Microsolvant
               </ThemedText>
               <ThemedText type="precision" style={styles.subtitle}>
                 Secure. Transparent. Controlled.

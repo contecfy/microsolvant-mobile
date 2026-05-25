@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../microsolvant_backend"
+		},
+		{
+			"path": "../microsolvant"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
