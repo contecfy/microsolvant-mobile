@@ -382,6 +382,7 @@ export default function RegisterScreen() {
                 isLoading={registerMutation.isPending}
                 fullWidth
                 borderRadius={12}
+                showShadow={false}
                 style={
                   [{ marginTop: 30, backgroundColor: theme === 'dark' ? '#222' : buttonBackground }] as any
                 }

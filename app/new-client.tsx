@@ -3,13 +3,11 @@ import { useRouter } from "expo-router";
 import {
   ChevronLeft,
   Fingerprint,
-  Mail,
-  Phone,
-  User,
-  Building,
   Lock,
+  Mail,
+  User
 } from "lucide-react-native";
-import { Button, Header, Toast, PhoneInput } from "prizmux";
+import { Button, Header, PhoneInput, Toast } from "prizmux";
 import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -145,18 +143,21 @@ export default function NewClientScreen() {
   return (
     <ThemedView style={{ flex: 1 }}>
       <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
-        <Header
-          title="Onboard New Client"
-          showBack
-          onBackPress={() => router.back()}
-          backIcon={<ChevronLeft color={textColor} size={24} />}
-          backgroundColor="transparent"
-          titleStyle={{
-            color: textColor,
-            fontFamily: "Inter_700Bold",
-            fontSize: 20,
-          }}
-        />
+       <Header
+              title="Onboard New Client"
+              showBack
+              onBackPress={() => router.back()}
+              backIcon={<ChevronLeft color={textColor} size={24} />}
+              backgroundColor={background}
+              titleStyle={{
+                color: textColor,
+                fontFamily: "Inter_700Bold",
+          
+              }}
+              backButtonBackgroundColor="transparent"
+              backIconColor={textColor}
+             
+            />
 
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -332,6 +333,7 @@ export default function NewClientScreen() {
               isLoading={onboardMutation.isPending}
               fullWidth
               borderRadius={16}
+              showShadow={false}
               style={
                 [
                   { marginTop: 20, height: 56, backgroundColor: theme === 'dark' ? '#222' : tintColor },

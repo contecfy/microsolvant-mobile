@@ -4,18 +4,18 @@ import { Banknote, Calendar, RefreshCw } from "lucide-react-native";
 import { Button } from "prizmux";
 import React, { useState } from "react";
 import {
+  Alert,
   ScrollView,
   StyleSheet,
   TextInput,
   TouchableOpacity,
   View,
-  Alert,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { loanApi } from "@/api/loan";
 import { IUser, userApi } from "@/api/user";
 import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useCompany } from "@/hooks/use-company";
 import { useThemeColor } from "@/hooks/use-theme-color";
@@ -207,7 +207,7 @@ export default function NewLoanScreen() {
   );
 
   return (
-    <ThemedView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header
         title="Apply for Loan"
         showBack
@@ -217,11 +217,11 @@ export default function NewLoanScreen() {
         titleStyle={{
           color: textColor,
           fontFamily: "Inter_700Bold",
-          fontSize: 20,
+    
         }}
         backButtonBackgroundColor="transparent"
         backIconColor={textColor}
-        style={{ borderBottomWidth: 0, paddingTop: 50 }}
+       
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -441,20 +441,16 @@ export default function NewLoanScreen() {
         swipeable={true}
         dismiss="manual"
       />
-    </ThemedView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+   flex: 1,
   },
 
-  backBtn: {
-    padding: 8,
-    borderRadius: 12,
-    backgroundColor: "rgba(0,0,0,0.05)",
-  },
+  
   scrollContent: {
     padding: 24,
     paddingBottom: 40,

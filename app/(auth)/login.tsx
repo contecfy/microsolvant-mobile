@@ -19,12 +19,15 @@ import { ThemedView } from "@/components/themed-view";
 import { useLogin } from "@/hooks/use-auth";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useThemeColor } from "@/hooks/use-theme-color";
-import Logo from "@/assets/images/logo-black.png";
+
+const darkLogo = require("@/assets/images/dark-logo.png");
+const lightLogo = require("@/assets/images/light-logo.png");
 
 export default function LoginScreen() {
   const router = useRouter();
   const colorScheme = useColorScheme();
   const theme = colorScheme ?? "light";
+  const logoSource = theme === "dark" ? lightLogo : darkLogo;
 
   const cardBackground = useThemeColor({}, "card");
   const textColor = useThemeColor({}, "text");
@@ -123,8 +126,8 @@ export default function LoginScreen() {
           <ScrollView contentContainerStyle={styles.scrollContent}>
             <ThemedView style={styles.header}>
               <Image
-                source={Logo}
-                style={[styles.logo, { tintColor: textColor }]}
+                source={logoSource}
+                style={styles.logo}
                 resizeMode="contain"
               />
               <ThemedText type="boldPrecision" style={styles.title}>
@@ -362,8 +365,8 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 68,
+    height: 68,
     marginBottom: 16,
   },
   title: {

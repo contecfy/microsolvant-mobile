@@ -11,24 +11,25 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
+const darkLogo = require("@/assets/images/dark-logo.png");
+const lightLogo = require("@/assets/images/light-logo.png");
+const iconImage = require("@/assets/images/icon.png");
+
 const SLIDES = [
   {
     title: "Welcome to Microsolvant",
     description:
       "A private financial services platform focused on accessible lending and investment opportunities.",
-    image: require("@/assets/images/logo-black.png"),
   },
   {
     title: "Visionary Ecosystem",
     description:
       "To build a trusted and scalable financial ecosystem that empowers individuals to grow their money.",
-    image: require("@/assets/images/logo-black.png"), // Reusing icon as placeholder
   },
   {
     title: "Responsible Lending",
     description:
       "Standardized repayment structures and disciplined capital management to ensure sustainability.",
-    image: require("@/assets/images/icon.png"),
   },
 ];
 
@@ -44,6 +45,9 @@ export default function Onboarding() {
   const buttonBackground = useThemeColor({}, "tint");
   const buttonText = useThemeColor({}, "background");
   const background = useThemeColor({}, "background");
+  const logoSource = theme === "dark" ? lightLogo : darkLogo;
+  const slideImage = currentSlide === 2 ? iconImage : logoSource;
+  const shouldTintSlideImage = currentSlide === 2;
 
   const handleNext = async () => {
     if (currentSlide < SLIDES.length - 1) {
@@ -66,8 +70,8 @@ export default function Onboarding() {
       <SafeAreaView style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
-            source={slide.image}
-            style={[styles.image, { tintColor: textColor }]}
+            source={slideImage}
+            style={[styles.image, shouldTintSlideImage && { tintColor: textColor }]}
             resizeMode="contain"
           />
         </View>
