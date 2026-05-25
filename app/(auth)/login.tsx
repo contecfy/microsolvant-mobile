@@ -19,6 +19,7 @@ import { ThemedView } from "@/components/themed-view";
 import { useLogin } from "@/hooks/use-auth";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useThemeColor } from "@/hooks/use-theme-color";
+import Logo from "@/assets/images/logo-black.png";
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -122,7 +123,7 @@ export default function LoginScreen() {
           <ScrollView contentContainerStyle={styles.scrollContent}>
             <ThemedView style={styles.header}>
               <Image
-                source={require("@/assets/images/icon.png")}
+                source={Logo}
                 style={[styles.logo, { tintColor: textColor }]}
                 resizeMode="contain"
               />

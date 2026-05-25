@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import { StyleSheet, View, Image, Dimensions } from "react-native";
-import { useRouter } from "expo-router";
-import { Button } from "prizmux";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
-import { useThemeColor } from "@/hooks/use-theme-color";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useThemeColor } from "@/hooks/use-theme-color";
 import { useAuthStore } from "@/store/auth-store";
+import { useRouter } from "expo-router";
+import { Button } from "prizmux";
+import React, { useState } from "react";
+import { Dimensions, Image, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
 const SLIDES = [
   {
-    title: "Welcome to Rucks Plug",
+    title: "Welcome to Microsolvant",
     description:
       "A private financial services platform focused on accessible lending and investment opportunities.",
-    image: require("@/assets/images/icon.png"),
+    image: require("@/assets/images/logo-black.png"),
   },
   {
     title: "Visionary Ecosystem",
     description:
       "To build a trusted and scalable financial ecosystem that empowers individuals to grow their money.",
-    image: require("@/assets/images/icon.png"), // Reusing icon as placeholder
+    image: require("@/assets/images/logo-black.png"), // Reusing icon as placeholder
   },
   {
     title: "Responsible Lending",
